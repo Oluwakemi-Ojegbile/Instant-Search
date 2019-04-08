@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instant Search</title>
+    <link rel="stylesheet" href="Search.css">
+</head>
+<body>
+<form id="main-wrapper">
+
+    <div class="input-bar">
+       
+        <input type="text" v-model="searchString" placeholder="search christian articles only..."/>
+    </div>
+
+    <ul>
+         <li v-for="article in filteredArticles">
+            <a v-bind:href="article.url"><img v-bind:src="article.image"/></a>
+            <p>{{article.title}}</p>
+        </li>
+    </ul>
+
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+<script type="text/javascript" src="Search.js"></script>
+</body>
+</html>
